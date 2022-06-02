@@ -14,20 +14,23 @@ def game(user, cpu):
         print("USER WINS!")
     elif user == cpu:
         print("TIE!")
+        start()
     else:
         print("CPU WINS!")
 
 
-print("Game Options: R for Rock; P for Paper; S for Scissors")
-
-cpu = random.choice(options)
+print("Game Options: R for Rock || P for Paper || S for Scissors")
 
 
-while True:
-    user = input("Select an option: ")
-    if user == "R" or user == "P" or user == "S":
-        print(f"USER ({user}): CPU ({cpu})\n")
-        game(user, cpu)
-        break
+def start():
+    while True:
+        cpu = random.choice(options)
+        user = input("Select an option: ")
+        if user == "R" or user == "P" or user == "S":
+            print(f"USER ({user}): CPU ({cpu})")
+            game(user, cpu)
+            break
+
+start()
 
 
